@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Log In</title>
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal&display=swap" rel="stylesheet">
+</head>
+<body>
+  <video autoplay muted loop>
+    <source src="bg.mp4" type="video/mp4">
+  </video>
+
+  <div class="signup-box">
+    <h1>Sign Up</h1>
+    <h4>Explore farms that are green, where we grow clean and mean!</h4>
+    <form>
+      <label>Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required />
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Should end with crc.pshs.edu.ph" required />
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Should have more than 8 characters" required />
+      <label>Confirm Password</label>
+      <input type="password" id="confirmPass" placeholder="Confirm your password" required />
+      <p id="status"></p>
+      <input type="button" value="Sign Up" onclick="signUp()" />
+    </form>
+
+    <p>
+      By clicking the Sign Up button, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Policy Privacy</a>
+    </p>
+
+    <p class="para-2">
+      <a onclick="showLogin()">Login here</a>
+    </p>
+  </div>
+
+  <div class="login-box" id="login-box">
+    <h1>Login</h1>
+    <form>
+      <label>Email</label>
+      <input type="email" id="login-email" placeholder="Enter your email" required />
+      <label>Password</label>
+      <input type="password" id="login-password" placeholder="Enter your password" required />
+      <p id="login-status"></p>
+      <input type="button" value="Login" onclick="login()" />
+    </form>
+  </div>
+
+  <script>
+    function signUp() {
+      if (checkEmail() && checkPass() && checkConfirmPass()) {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+        document.getElementById('status').innerHTML = 'Sign up successful! Please proceed to <a href="page2.html">this link</a>.';
+      } else {
+        document.getElementById('status').innerHTML = 'Your Sign-Up Credentials are Invalid. Please Try Again';
+      }
+    }
+
+    function checkEmail() {
+      var x = document.getElementById('email').value;
+      let resultX = x.endsWith('@crc.pshs.edu.ph');
+      if (resultX) {
+        return true;
+      } else {
+        document.getElementById('status').innerHTML = 'Your email is invalid.';
+        return false;
+      }
+    }
+
+    function checkPass() {
+      var y = document.getElementById('password').value;
+      if (y.trim().length <= 8) {
+        document.getElementById('status').innerHTML = 'Password should have more than 8 characters.';
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    function checkConfirmPass() {
+      var pw1 = document.getElementById('password').value;
+      var pw2 = document.getElementById('confirmPass').value;
+      if (pw1 !== pw2) {
+        document.getElementById('status').innerHTML = 'Passwords do not match.';
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    function showLogin() {
+      document.querySelector('.signup-box').style.display = 'none';
+      document.querySelector('.login-box').style.display = 'block';
+    }
+
+    function login() {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const storedEmail = localStorage.getItem('email');
+      const storedPassword = localStorage.getItem('password');
+
+      if (email === storedEmail && password === storedPassword) {
+        window.location.href = 'page2.html';
+      } else {
+        document.getElementById('login-status').innerHTML = 'Oops! please sign up first!';
+      }
+    }
+  </script>
+</body>
+<style>
+  body {
+    background-color: #E8F5E9;
+    font-family: "Roboto", 'Arsenal';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .signup-box, .login-box {
+    width: 360px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .signup-box h1, .login-box h1 {
+    color: #2E7D32;
+    margin-top: 5px;
+    font-family: 'Lucida Handwriting';
+  }
+
+  .signup-box h4 {
+    color: #6D4C41;
+    font-family: sans-serif;
+  }
+
+  .signup-box form, .login-box form {
+    width: 300px;
+    margin: 10px auto;
+  }
+
+  .signup-box form label, .login-box form label {
+    display: flex;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #4E342E;
+  }
+
+  .signup-box form input, .login-box form input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #A1887F;
+    border-radius: 4px;
+    outline: none;
+    color: #4E342E;
+  }
+
+  .signup-box form input[type="button"], .login-box form input[type="button"] {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border: none;
+    background-color: #2E7D32;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .signup-box form input[type="button"]:hover, .login-box form input[type="button"]:hover {
+    background-color: #1B5E20;
+  }
+
+  .signup-box p, .login-box p {
+    text-align: center;
+    padding-top: 0%;
+    font-size: 13px;
+    color: #4E342E;
+  }
+
+  .para-2 {
+    text-align: center;
+    color: #4E342E;
+    font-size: 15px;
+    margin-top: -10px;
+    font-family: Monaco, monospace;
+  }
+
+  .para-2 a {
+    color: #4CAF50;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .para-2 a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2E7D32;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .para-2 a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  .login-box {
+    display: none;
+  }
+
+  .login-box.active {
+    display: block;
+  }
+</style>
+</html>

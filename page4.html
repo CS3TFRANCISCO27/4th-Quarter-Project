@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Agriculture Impacts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9;
+            color: #333;
+            overflow-x: hidden;
+        }
+        #container {
+            width: 80%;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            font-size: 2rem;
+            color: #4caf50;
+        }
+        .section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .section div {
+            flex: 1;
+            margin: 0 1rem;
+            background-color: #f1f8e9;
+            padding: 1rem;
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSection 1s forwards;
+        }
+        .section div img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .section div:hover img {
+            transform: scale(1.05);
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            color: #4caf50;
+            margin-top: 1rem;
+        }
+        .section p, .section ul {
+            margin-top: 1rem;
+            color: #555;
+        }
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .section ul li {
+            background: #dcedc8;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        @keyframes fadeInSection {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Economic and Environmental Impact</h1>
+        <p>Sustainable agriculture is an approach to farming that focuses on producing food in a way that is environmentally friendly, economically viable, and socially responsible. Let’s explore its impacts in two key areas: economic and environmental.</p>
+        <div class="section">
+            <div>
+                <img src="t.jpg" alt="Economic impacts of sustainable agriculture">
+                <h2>Economic Impact</h2>
+                <p>Sustainable agriculture supports farm profitability and local economies, ensures fair treatment of workers, supports new generations of farmers, and promotes equitable access to healthy food.</p>
+                <ul>
+                    <li>Practices like crop rotation, reduced tillage, and agroforestry enhance farm resilience and productivity while reducing the need for costly inputs such as chemical fertilizers and pesticides.</li>
+                </ul>
+            </div>
+            <div>
+                <img src="t1.jfif" alt="Environmental impacts of sustainable agriculture">
+                <h2>Environmental Impact</h2>
+                <p>Sustainable agriculture protects and enhances natural resources, minimizes pollution, and promotes biodiversity.</p>
+                <ul>
+                    <li>It involves building healthy soil, managing water efficiently, planting cover crops, and increasing resilience to extreme weather, thereby mitigating the negative impacts of conventional farming on the environment.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section div');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.3}s`;
+            });
+        });
+    </script>
+</body>
+</html>

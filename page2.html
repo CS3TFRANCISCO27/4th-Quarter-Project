@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Agriculture</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <button class="sign-up" onclick="redirectToFirstPage()">Sign up</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="leftnRight">
+            <div class="leftOne">
+                <h1><span class="grow">"GROWING</span><span class="rest"> RESPONSIBLY FOR A THRIVING TOMORROW"</span></h1>
+                <img src="holdPlants.png" alt="Hands holding plants">
+            </div>        
+
+            <div class="rightOne">
+                <h2>What is Sustainable Agriculture?</h2>
+                <p>Sustainable agriculture nurtures the land and supports communities, balancing nature's needs with our own for a healthier, fairer future. Discover how this method is shaping the future of farming by reading the full content below:</p>
+                <button class="read-more" onclick="redirectToPage('page3.html')">Read Now</button>
+                <button class="source" onclick="redirectToURL('https://www.ucsusa.org/resources/what-sustainable-agriculture')">Source</button>
+            </div>
+        </div>
+        <div class="explore">
+            <h2>Explore the World of Sustainable Agriculture!</h2>
+            <p>Food sustains life, and agriculture is its bedrock. From grains to fruits, vegetables to pulses, agriculture shapes our nourishment. Yet, amid this bounty, sustainability is paramount. Let's explore the world of farming, where each crop sown carries the promise of a greener, more resilient future.</p>
+            <div class="buttons">
+                <button onclick="redirectToPage('page4.html')">Economic and Environmental Impact</button>
+                <button class="lastBtn" onclick="redirectToPage('page5.html')">Sustainable Agriculture Practices</button>
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="gege.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function redirectToFirstPage() {
+            window.location.href = "page1.html";
+        }
+
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
+
+        function redirectToURL(url) {
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+
+<style>
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #e8f5e9;
+        color: #333;
+        overflow-x: hidden; 
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: #314528; 
+        padding: 10px 20px;
+    }
+
+    .sign-up {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .sign-up:hover {
+        background-color: #45a049;
+    }
+
+    main {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leftnRight {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .leftOne {
+        flex: 1;
+        min-width: 300px;
+        margin-right: 20px;
+    }
+
+    .leftOne h1 {
+        font-size: 2rem;
+        color: #314528;
+        margin: 0 0 20px 0;
+        animation: fadeInLeft 1s ease-in-out;
+        text-align: center; 
+    }
+
+    .leftOne img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .rightOne {
+        flex: 1;
+        min-width: 300px;
+        margin-left: 20px;
+        animation: fadeInRight 1s ease-in-out;
+        margin-top: 200px;
+    }
+
+    .rightOne h2 {
+        font-size: 1.5rem;
+        color: #314528;
+        margin-bottom: 20px;
+    }
+
+    .rightOne p {
+        margin-bottom: 20px;
+    }
+
+    .rightOne button {
+        margin: 5px;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .rightOne .read-more {
+        background-color: #3F352E;
+        color: white;
+        border: none;
+    }
+
+    .rightOne .read-more:hover {
+        background-color: #2e2c2a;
+    }
+
+    .rightOne .source {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+    }
+
+    .rightOne .source:hover {
+        background-color: #f0f0f0;
+    }
+
+    .explore {
+        text-align: center;
+        margin-top: 40px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .explore h2 {
+        font-size: 1.5rem;
+        color: #314528;
+        margin-bottom: 20px;
+    }
+
+    .explore p {
+        margin-bottom: 20px;
+    }
+
+    .explore .buttons button {
+        background-color: #6F7D36;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .explore .buttons button:hover {
+        background-color: #5a6430;
+    }
+
+    .video {
+        margin-top: 20px;
+    }
+
+    .video video {
+        width: 100%;
+        max-width: 640px;
+        border-radius: 8px;
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+</html>

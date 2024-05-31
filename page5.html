@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Agriculture Farming Practices</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: #e9f7ef;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .slideshow-container {
+            position: relative;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            position: relative;
+        }
+
+        .slide-img {
+            width: 80%;
+            max-height: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .text {
+            font-size: 1.5em;
+            color: #388e3c;
+            margin-bottom: 10px;
+        }
+
+        .caption {
+            font-size: 1em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #c0ca33;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #8bc34a;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 50%;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slideshow-container">
+
+            <div class="slide fade">
+                <div class="text">Crop Rotation and Diversity:</div>
+                <img src="1.png" class="slide-img">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption">Plant different crops in the same area over time to improve soil health and control pests.</div>
+            </div>
+
+            <div class="slide fade">
+                <div class="text">Cover Crops and Perennials:</div>
+                <img src="2.png" class="slide-img">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption">Use plants like clover or rye to protect and nourish the soil when main crops aren’t growing.</div>
+            </div>
+
+            <div class="slide fade">
+                <div class="text">Reduced Tillage:</div>
+                <img src="3.png" class="slide-img">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption">Minimize plowing to prevent soil erosion and maintain soil health.</div>
+            </div>
+
+            <div class="slide fade">
+                <div class="text">Integrated Pest Management (IPM):</div>
+                <img src="4.png" class="slide-img">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption">Use natural methods and fewer chemicals to manage pests.</div>
+            </div>
+
+            <div class="slide fade">
+                <div class="text">Combining Livestock and Crops:</div>
+                <img src="5.png" class="slide-img">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption">Raise animals and grow crops together to recycle nutrients and improve farm efficiency.</div>
+            </div>
+
+            <div class="slide fade">
+                <div class="text">Agroforestry:</div>
+                <img src="6.png" class="slide-img">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption">Incorporate trees and shrubs into farming to provide benefits like shade, shelter, and extra income from fruits or nuts.</div>
+            </div>
+
+            <div class="slide fade">
+                <div class="text">Whole System Management:</div>
+                <img src="7.png" class="slide-img">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption">Treat all parts of the farm as interconnected, protecting areas like streams and field edges to reduce erosion and support wildlife.</div>
+            </div>
+
+        </div>
+        <br>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
